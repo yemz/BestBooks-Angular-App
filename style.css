@@ -1,0 +1,164 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+body {
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 45px;
+  padding-bottom: 20px;
+  margin-bottom: 30px; /*Same as height in footer*/
+ 
+}
+
+h1 {
+  font-family: 'Kurale', serif;
+}
+
+h4 {
+  font-family: 'Comfortaa', cursive;
+}
+
+
+/* NAVIGATION */
+
+.navbar brand {
+  font-family: 'Comfortaa', cursive;
+}
+
+.navbar {
+     margin-bottom: 0;
+     background-color: #14C8DA;
+     border: 0;
+     font-size: 14px !important;
+     letter-spacing: 2px;
+     opacity:0.9;
+}
+
+.navbar li a, .navbar .navbar-brand {
+     color: #fff !important;
+     font-family: 'Comfortaa', cursive;
+    }
+
+
+.navbar-nav li a:hover {
+     color: #fff !important;
+    }
+
+.navbar-nav li.active a {
+     color: #fff !important;
+     background-color:#242426 !important;
+    }
+
+.navbar-toggle a:hover {
+     background-color:#242426;
+    }
+
+#searchBox {
+  background-color: #12b8c8;
+  color: #fff;
+  border-radius: 10px;
+  border: 1px solid #fff !important; 
+  text-align: center;
+  margin: 10px;
+  width: 300px;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+}
+
+.fa-search { 
+   color: #fff;
+   padding-right:20px;
+}
+
+/* Book Title */
+
+.books {
+  font-family: 'Comfortaa', cursive;
+}
+
+em {
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* Tabs */
+
+ul.list-group:after {
+ 
+  display: block;
+  content: "";
+}
+
+.list-group-item {
+    margin: 15px;
+    padding: 10px 10px;
+}
+
+a {
+  display: block;
+  padding: 5px;
+}
+
+blockquote {
+  font-size: 16px;
+}
+
+.nav {
+  font-size: 16px;
+}
+
+/* Gallery */
+
+img {
+  border-radius: 5px;
+  border: 2px solid lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Form Validation - Red(invalid) - Green(valid)*/
+
+.ng-invalid.ng-dirty {
+  border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}
+
+/* Footer */
+.footer {
+   
+ position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #14C8DA;
+    color: white;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    height: 30px; /* Same as margin-bottom in body*/
+    padding: 5px;
+   
+}
+
+
+
+

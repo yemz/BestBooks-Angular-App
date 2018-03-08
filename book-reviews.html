@@ -1,0 +1,45 @@
+  <div class="books">
+     <!-- Product Reviews List -->
+        <ul class="list-unstyled">
+          <h4><strong>Reviews</strong></h4>
+          <li ng-repeat="review in book.reviews">
+            <blockquote>
+              <strong>{{review.stars}} Stars</strong>
+              {{review.body}}
+              <cite class="clearfix">&mdash; {{review.author}} on {{review.createdOn | date}}</cite>
+            </blockquote>
+          </li>
+        </ul>
+
+        <!-- Review Form -->
+        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(book)" novalidate>
+
+         <!-- Live Preview -->
+         <blockquote ng-show="reviewCtrl.review.stars">
+           <strong>{{reviewCtrl.review.stars}} Stars</strong>
+           {{reviewCtrl.review.body}}
+           <cite class="clearfix">&mdash; {{reviewCtrl.review.author}}</cite>
+         </blockquote>
+
+       <!-- Review Form -->
+       <h4>Submit a Review</h4>
+       <fieldset class="form-group">
+         <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
+           <option value="">Rate {{book.name}}</option>
+         </select>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the book {{book.name}}..." title="Review" required></textarea>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmy@example.org" title="Email" required />
+      </fieldset>
+
+      <fieldset class="form-group">
+        <!--<div>reviewForm is {{reviewForm.$valid}}</div>-->
+        <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+      </fieldset>
+     </form>
+  </div>

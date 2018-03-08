@@ -1,0 +1,29 @@
+ <!-- Product Tabs -->
+  <div class="books tabs">
+    <!-- <section ng-controller="TabController as tab"> -->
+     <section>
+      <ul class="nav nav-tabs">
+        <li ng-class="{ active:tab.isSet(1) }">
+          <a href="" ng-click="tab.setTab(1)">Description</a>
+        </li>
+        <li ng-class="{ active:tab.isSet(2) }">
+          <a href="" ng-click="tab.setTab(2)">Book Details</a>
+        </li>
+        <li ng-class="{ active:tab.isSet(3) }">
+          <a href="" ng-click="tab.setTab(3)">Reviews</a>
+        </li>
+      </ul>
+   </div>
+
+      <!-- Description Tab's Content -->
+      <book-description ng-show="tab.isSet(1)"></book-description>
+
+      <!-- Spec Tab's Content -->
+      <div ng-show="tab.isSet(2)" book-details></book-details>
+    
+      </div>
+
+      <!-- Reviews Tab's Content -->
+      <book-reviews ng-show="tab.isSet(3)"></book-reviews>
+   
+  </section>

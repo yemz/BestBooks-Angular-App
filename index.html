@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="bookStore">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+    <title>[BEST:Books] - AngularJS App</title>
+
+    <link id="active_style" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/cosmo/bootstrap.min.css">
+    <link data-require="bootstrap-css" data-semver="3.1.1" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link data-require="semantic-ui@*" data-semver="0.9.6" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.9.6/css/semantic.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script data-require="semantic-ui@*" data-semver="0.9.6" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.9.6/javascript/semantic.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.15/angular.js" data-semver="1.2.15"></script>
+
+    <!-- load angular and angular route via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Kurale" rel="stylesheet">
+
+     <!-- IE required polyfills, in this exact order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+    <script src="https://npmcdn.com/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+    <script src="app.js"></script>
+    <script src="books.js"></script>
+  </head>
+
+  <body ng-controller="BookController as book">
+
+    <!-- Navigation Bar Brand-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+       <div class="container-fluid">
+          <div class="navbar-header">
+             <a class="navbar-brand" href="#"><strong>[BEST:Books]</strong></a>
+          </div>
+
+      <!-- Navigation SearchBox -->
+      <div class="collapse navbar-collapse" id="myMenu">
+         <ul class="nav navbar-nav navbar-right">
+            <input type="text" id="searchBox" placeholder="  Search a Book..." ng-model="searchBox"><i class="fa fa-search"></i>
+         </ul>
+         </div>
+      </div>
+   </nav>
+
+    <!-- Books Header -->
+    <header>
+      <h1 class="text-center"><strong>Best-Selling Books</strong></h1>
+      <h4 class="text-center">&mdash; More than 100 million copies &mdash;</h4>
+    </header>
+
+    <!-- Books Container -->
+    <div class="list-group">
+
+    <!-- Book Container -->
+    <div class="list-group-item" ng-repeat="book in book.books | filter:searchBox">
+
+    <!-- Books Directive to Display Book Titles -->
+    <book-title></book-title>
+
+    <!-- Image Gallery -->
+    <book-gallery></book-gallery>
+
+    <!-- Book Tabs -->
+    <book-tabs></book-tabs>
+
+ </div>
+</div>
+
+     <!-- Footer -->
+     <div class="text-center footer">
+        <footer>
+            <i class="fa fa-copyright" aria-hidden="true"></i>2018 [BEST:Books]. Created by Yessenia Melendez</a>.
+        </footer>
+     </div>
+
+  </body>
+</html>
